@@ -1,6 +1,7 @@
 #include <iostream>
 
 mutex addMutex;
+mutex subMutex;
 
 int add(int a, int b)
 {
@@ -12,7 +13,10 @@ int add(int a, int b)
 
 int subtract(int a, int b)
 {
-	return (a - b);
+	subMutex.lock();
+	int result = (a - b);
+	subMutex.unlock();
+	return result;
 }
 
 int main()
