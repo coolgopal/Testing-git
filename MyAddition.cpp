@@ -1,6 +1,7 @@
 #include <iostream>
 
 mutex addMutex;
+
 mutex subMutex;
 
 int add(int a, int b)
